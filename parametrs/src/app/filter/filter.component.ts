@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class FilterComponent implements OnInit {
 	searchCar = '';
+	title = '';
 	cars = [
 		{name: 'Ford', descr: 'WFM 1'},
 		{name: 'Mazda', descr: 'WFM 2'},
@@ -18,7 +19,9 @@ export class FilterComponent implements OnInit {
 		{name: 'BMW', descr: 'WFM 6'},
 	]
 
-	asyncTitle = Observable.of('Async title 3 seconds').delay(3000); 
+	asyncTitle = Observable.of('Async title 3 seconds')
+	.delay(3000)
+	.subscribe((str) => this.title = str); 
 
 	addCar() {
 		this.cars.push({
