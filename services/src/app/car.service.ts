@@ -1,4 +1,11 @@
+import { ConsoleService } from './console.service';
+import { Injectable } from '@angular/core';
+
+@Injectable()
 export class CarService {
+
+	constructor(private consoleService: ConsoleService) {}
+
 	cars = [{
 		name: 'Ford',
 		isSold: false
@@ -15,5 +22,6 @@ export class CarService {
 
 	onAddCar(carName: string) {
 		this.cars.push({ isSold: false, name: carName });
+		this.consoleService.log(`Car ${carName} was added!`);
 	}
 }
