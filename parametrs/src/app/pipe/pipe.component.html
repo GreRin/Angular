@@ -1,0 +1,22 @@
+<div class="col-xs-8 col-xs-offset-2">
+	<h2>Pipe</h2>
+	<p>{{ name }}</p>
+	<p>{{ name | lowercase }}</p>
+	<p>{{ name | uppercase }}</p>
+	<hr>
+	<p>{{ pi }}</p>
+	<p>{{ pi | number }}</p>
+	<p>{{ pi | number:'1.3-4' }}</p>
+	<p>{{ pi | number:'2.2-2' }}</p>
+	<hr>
+	<p>{{ money | currency:'USD' }}</p>
+	<p>{{ money | appPow:3:'New Pipe' }}</p>
+	<hr>
+	<p>{{ date | date:'shortDate' }}</p>
+	<p>{{ date | date:'shortTime' }}</p>
+	<hr>
+	<p>{{ amount | percent }}</p>
+	<hr>
+	<p>{{ object }}</p>
+	<p>{{ object | json }}</p>
+</div>
