@@ -20,8 +20,8 @@ export class FilterComponent implements OnInit {
 	]
 
 	asyncTitle = Observable.of('Async title 3 seconds')
-	.delay(3000)
-	.subscribe((str) => this.title = str); 
+	.delay(3000);
+	// .subscribe((str) => this.title = str); 
 
 	addCar() {
 		this.cars.push({
