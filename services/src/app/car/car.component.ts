@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ConsoleService } from '../console.service';
 
 @Component({
   selector: 'app-car',
@@ -17,5 +18,7 @@ export class CarComponent {
 
 	onAction(type: string) {
 		this.car.isSold = type === 'buy' ? true : false;
+		const service = new ConsoleService();
+		service.log(`${this.car.name} status = ${type}`);
 	}
 }
