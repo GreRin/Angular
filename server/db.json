@@ -1,38 +1,16 @@
 {
   "cars": [
     {
-      "color": "yellow",
-      "id": 1
-    },
-    {
-      "color": "yellow",
-      "id": 2
-    },
-    {
-      "color": "blue",
-      "id": 3
-    },
-    {
-      "color": "gray",
-      "id": 4
-    },
-    {
-      "color": "blue",
-      "id": 5
-    },
-    {
-      "color": "yellow",
-      "id": 6
-    },
-    {
-      "name": "Ford",
-      "color": "blue",
-      "id": 7
-    },
-    {
-      "name": "Infinity",
       "color": "blue",
       "id": 8
+    },
+    {
+      "color": "yellow",
+      "id": 9
+    },
+    {
+      "color": "white",
+      "id": 10
     }
   ]
 }

@@ -55,4 +55,11 @@ export class AppComponent implements OnInit {
 		this.carsService.changeColor(car, this.getRandomColor())
 		.subscribe(car => console.log(car))
 	}
+
+	deleteCar(car: Cars) {
+		this.carsService.deleteCar(car)
+		.subscribe(data => {
+			this.cars = this.cars.filter(c => c.id !== car.id)
+		})
+	}
 };
