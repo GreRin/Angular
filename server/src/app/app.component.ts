@@ -24,13 +24,12 @@ export class AppComponent implements OnInit {
 
 	cars: Cars[] = [];
 	carName: string = '';
+	appTitle;
 	
 	constructor(private carsService: CarsService) {}
 
 	ngOnInit() {
-		this.carsService
-		.getCars()
-		.subscribe(data => this.cars = data["cars"]);
+		this.appTitle = this.carsService.getAppTitle();
 	}
 
 	loadCars() {

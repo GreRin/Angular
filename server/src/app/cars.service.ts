@@ -7,6 +7,14 @@ import { Observable } from 'rxjs';
 export class CarsService {
 	constructor(private http: HttpClient) {}
 
+	getAppTitle() {
+		return this.http
+		.get('http://localhost:3000/title')
+		.map(data => {
+			return data.value
+		})
+	}
+
 	getCars() {
 		const headers = new HttpHeaders({
 			'Content-Type': 'application/json; charset=utf8'
