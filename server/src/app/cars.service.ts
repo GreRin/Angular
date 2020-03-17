@@ -23,4 +23,12 @@ export class CarsService {
 			return data
 		});
 	}
+
+	changeColor(car: any, color: string) {
+		car.color = color;
+		return this.http.put(`http://localhost:3000/cars/${car.id}`, {color})
+		.map(data => {
+			return data
+		});
+	}
 }

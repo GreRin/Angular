@@ -1,39 +1,38 @@
 {
   "cars": [
     {
-      "name": "Ford",
-      "color": "white",
+      "color": "yellow",
       "id": 1
     },
     {
-      "name": "BMW",
-      "color": "black",
+      "color": "yellow",
       "id": 2
     },
     {
-      "name": "Lexus",
-      "color": "pink",
+      "color": "blue",
       "id": 3
     },
     {
-      "name": "sdcasd",
-      "color": "blue",
+      "color": "gray",
       "id": 4
     },
     {
-      "name": "sdcdsdc",
       "color": "blue",
       "id": 5
     },
     {
-      "name": "adawd",
-      "color": "blue",
+      "color": "yellow",
       "id": 6
     },
     {
       "name": "Ford",
       "color": "blue",
       "id": 7
+    },
+    {
+      "name": "Infinity",
+      "color": "blue",
+      "id": 8
     }
   ]
 }
