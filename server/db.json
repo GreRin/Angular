@@ -1,10 +1,10 @@
 {
-	"title": {
-		"value": "Cars meneger"
-	},
+  "title": {
+    "value": "Cars meneger"
+  },
   "cars": [
     {
-      "color": "blue",
+      "color": "red",
       "id": 8
     },
     {
@@ -12,13 +12,16 @@
       "id": 9
     },
     {
-      "color": "white",
+      "color": "green",
       "id": 10
     },
     {
-      "name": "ada",
-      "color": "blue",
-      "id": 11
+      "color": "green",
+      "id": 12
+    },
+    {
+      "color": "white",
+      "id": 13
     }
   ]
 }

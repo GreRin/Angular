@@ -9,7 +9,7 @@ export class CarsService {
 
 	getAppTitle() {
 		return this.http
-		.get('http://localhost:3000/title')
+		.get('http://localhost:4200/title')
 		.map(data => {
 			return data.value
 		})
