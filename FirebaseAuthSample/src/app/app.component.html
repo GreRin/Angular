@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<ng-template #login>
-		<div class="row">
+		<div class="row" *ngIf="!phoneSignIn; else phone">
 			<div class="col">
 				<div class="row">
 					<div class="col">
@@ -44,10 +44,10 @@
 				</div>
 				<hr>
 				<div class="row">
-					<button class="btn btn-primary btn-block email">
-						<i class="far fa-envelope"></i> Login with Email/Password
+					<button class="btn btn-primary btn-block email" (click)="toggleSignInMode()">
+						<i class="far fa-envelope"></i> {{ signInMode ? "Sign Up":"Sign In" }} with Email/Password
 					</button>
-					<button class="btn btn-primary btn-block phone">
+					<button class="btn btn-primary btn-block phone" (click)="togglePhoneSignIn()">
 						<i class="fas fa-phone"></i> Login with Phone
 					</button>
 					<button class="btn btn-primary btn-block anonymous">
@@ -75,31 +75,28 @@
 							[(ngModel)]="password"
 						>
 					</div>
-					<button class="btn btn-primary btn-block" (click)="signUp()">Sign Up</button>
-				</form>
-				<form>
-					<div class="form-group">
-						<label for="email">Email</label>
-						<input 
-							name="email" 
-							type="text" 
-							class="form-control"
-							[(ngModel)]="email"
-						>
-					</div>
-					<div class="form-group">
-						<label for="password">Password</label>
-						<input 
-							name="password" 
-							type="password" 
-							class="form-control"
-							[(ngModel)]="password"
-						>
-					</div>
-					<button class="btn btn-primary btn-block" (click)="signIn()">Sign In</button>
+					<button class="btn btn-primary btn-block" (click)="signInOrSignUp()">{{ signInMode ? "Sign In" :  "Sign Up"}}</button>
 				</form>
 			</div>
 		</div>
+		<ng-template #phone>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input name="phoneNumber" [(ngModel)]="phoneNumber" type="text" class="form-control">
+      </div>
+      <div id="recaptcha-container"></div>
+      <button 
+        class="btn btn-primary btn-block"
+        [disabled]="disableOTPSendButton"
+        (click)="sendOTP()">Send OTP</button>
+      <hr>
+      <div class="form-group">
+        <label for="otp">OTP</label>
+        <input name="otp" [(ngModel)]="otp" type="text" class="form-control">
+      </div>
+      <button class="btn btn-primary btn-block" (click)="verifyOTP()">Verify OTP</button>
+      <button class="btn btn-primary btn-block" (click)="togglePhoneSignIn()">Cancel</button>
+		</ng-template>
 	</ng-template>
 
 </div>
