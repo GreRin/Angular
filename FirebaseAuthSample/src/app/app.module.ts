@@ -4,18 +4,31 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppFirebaseModule } from './app-firebase/app-firebase.module';
+
 import { WindowService } from './common/window/window.service';
+import { AuthService } from './common/auth/auth.service';
+import { LoginOptionsComponent } from './components/login-options/login-options.component';
+import { SigninSignupComponent } from './components/signin-signup/signin-signup.component';
+import { PhoneSigninComponent } from './components/phone-signin/phone-signin.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginOptionsComponent,
+    SigninSignupComponent,
+    PhoneSigninComponent,
+    UserDetailsComponent
   ],
   imports: [
 		BrowserModule,
 		AppFirebaseModule,
 		FormsModule
   ],
-  providers: [WindowService],
+  providers: [
+		AuthService,
+		WindowService
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
