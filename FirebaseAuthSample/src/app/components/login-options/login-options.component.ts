@@ -12,6 +12,8 @@ export class LoginOptionsComponent implements OnInit {
 
 	providers = environment.providers;
 	modes = environment.modes;
+	email: string;
+	password: string;
 
   constructor(
 		public authService: AuthService,
@@ -23,14 +25,12 @@ export class LoginOptionsComponent implements OnInit {
 	signInWithModeAndProvider(mode: string, provider: string) {
 		this.authService.signIn(mode, provider);
 	}
-
-	toggleSignInMode() {
-		this.authService.signInMode = !this.authService.signInMode
-	}
-
-	
+		
 	togglePhoneSignIn() {
 		this.authService.phoneSignIn = !this.authService.phoneSignIn
 	}
 
+	signInOrSignUp() {
+		this.authService.signInOrSignUp(this.email, this.password);
+	}
 }

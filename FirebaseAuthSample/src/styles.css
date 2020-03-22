@@ -11,3 +11,13 @@
 .github 	{ background-color: #333333; }
 .email 		{ background-color: #FFFFFF; color: #757575; }
 .phone 		{ background-color: #02BD7E; }
+
+body {
+	height: 100vh;
+}
+
+.app-root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}

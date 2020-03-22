@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppFirebaseModule } from './app-firebase/app-firebase.module';
@@ -23,7 +24,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
   imports: [
 		BrowserModule,
 		AppFirebaseModule,
-		FormsModule
+		FormsModule,
+		ReactiveFormsModule
   ],
   providers: [
 		AuthService,

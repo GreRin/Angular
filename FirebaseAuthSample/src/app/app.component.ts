@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -22,46 +22,14 @@ export class AppComponent implements OnInit {
 	) {}
 
   ngOnInit() {
-    this.windowRef = this.windowService.windowRef;
-  }
+		this.windowRef = this.windowService.windowRef;
+	}
+	
+	toggleSignInMode() {
+		this.authService.signInMode = !this.authService.signInMode
+	}
 
-	// googleSignInViaPopup() {
-	// 	this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// googleSignInViaRedirect() {
-	// 	this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider())
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// facebookSignInViaPopup() {
-	// 	this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider())
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// facebookSignInViaRedirect() {
-	// 	this.afAuth.auth.signInWithRedirect(new auth.FacebookAuthProvider())
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// githubSignInViaPopup() {
-	// 	this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider())
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// githubSignInViaRedirect() {
-	// 	this.afAuth.auth.signInWithRedirect(new auth.GithubAuthProvider())
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// signIn() {
-	// 	this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
-
-	// signUp() {
-	// 	this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password)
-	// 		.then((userCredentials) => console.log(userCredentials));
-	// }
+	logout() {
+		this.authService.logOut();
+	}
 }
