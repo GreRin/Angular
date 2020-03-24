@@ -32,4 +32,10 @@ export class AppComponent implements OnInit {
 	logout() {
 		this.authService.logOut();
 	}
+
+	hideSignInButton() {
+		// if() {
+		// 	return false
+		// }
+	}
 }

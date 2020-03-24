@@ -22,13 +22,20 @@ h1 {
 	justify-content: space-around;
 }
 
-li a {
+.navbar-nav li a {
 	color: #fff;
 	margin: 0 50px;
+	cursor: pointer;
 }
 
-.active>a {
-	color: silver;
+.dropdown-menu {
+	left: -70px !important;
+}
+
+.user-photo img {
+	width: 3rem;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 main {

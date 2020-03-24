@@ -1,23 +1,27 @@
 	<header>
 		<nav class="navbar navbar-expand-sm bg-light navbar-light">
 			<h1>Dev Incubator</h1>
-			<!-- <ul class="navbar-nav">
-				<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="/">Home</a>
-				</li>
-				<li routerLinkActive="active">
-					<a class="nav-link" routerLink="/form">Info</a>
-				</li>
-				<li routerLinkActive="active">
-					<a class="nav-link" routerLink="/about-us">About</a>
-				</li>
-			</ul> -->
-			<button class="btn btn-primary" (click)="toggleSignInMode()">
+			<button class="btn btn-primary" (click)="toggleSignInMode()" ng-hide='afAuth.authState | async as user'>
 				<i class="far fa-envelope"></i> {{ authService.signInMode ? "Sign Up":"Sign In" }}
 			</button>
-			<button class="btn btn-primary" (click)="logout()" *ngIf='afAuth.authState | async as user'>
-				Sign Out
-			</button>
+
+
+			<div class="btn-group" *ngIf='afAuth.authState | async as user'>
+				<div class="user-photo">
+					<img class="card-img-top" [src]="user.photoURL" alt="Card image cap">
+				</div>
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					User
+				</button>
+				<div class="dropdown-menu">
+					<button class="dropdown-item" href="#">Action</button>
+					<button class="dropdown-item" href="#">Another action</button>
+					<button class="dropdown-item" href="#">Something else here</button>
+					<div class="dropdown-divider"></div>
+					<button class="dropdown-item" (click)="logout()">Sign Out</button>
+				</div>
+			</div>
+
 			<ng-template #login>
 				<div class="row" *ngIf="authService.phoneSignIn; else loginOptions">
 					<app-phone-signin></app-phone-signin>

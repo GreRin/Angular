@@ -14,8 +14,7 @@ export const environment = {
     appId: "1:912380236631:web:9f6b82e5ce92d0ebb7a412"
 	},
 	modes: {
-		POPUP: 'popup',
-		REDIRECT: 'redirect'
+		POPUP: 'popup'
 	},
 	providers: {
 		GOOGLE: 'google',
