@@ -39,7 +39,7 @@ export class AuthService {
 
 	signInOrSignUp(email, password) {
 		this.signInMode ? this.afAuth.auth.signInWithEmailAndPassword(email, password)
-							: this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+										: this.afAuth.auth.createUserWithEmailAndPassword(email, password)
 	}
 
 	logOut() {

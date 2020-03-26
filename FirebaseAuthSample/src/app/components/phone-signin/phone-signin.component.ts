@@ -52,5 +52,4 @@ export class PhoneSigninComponent implements OnInit, AfterViewInit {
 	togglePhoneSignIn() {
 		this.authService.phoneSignIn = !this.authService.phoneSignIn
 	}
-
 }

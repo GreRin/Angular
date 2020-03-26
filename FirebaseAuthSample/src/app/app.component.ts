@@ -10,12 +10,13 @@ import { AuthService } from './common/auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
 
 	phoneSignIn: boolean = true;
 	windowRef: any;
 
-	constructor(
+	constructor (
 		public afAuth: AngularFireAuth,
 		public authService: AuthService,
 		private windowService: WindowService
@@ -33,9 +34,9 @@ export class AppComponent implements OnInit {
 		this.authService.logOut();
 	}
 
-	hideSignInButton() {
-		// if() {
-		// 	return false
-		// }
+	hideLoginButton() {
+		if (this.afAuth.auth.currentUser) {
+			return false
+		} else { return true }
 	}
 }
